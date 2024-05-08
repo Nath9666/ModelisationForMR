@@ -12,4 +12,5 @@ def ExtraireBord(M):
         else:
             # Sinon, ajoute l'arête au bord
             bord.add(arete)
+        print(bord)
     return bord
