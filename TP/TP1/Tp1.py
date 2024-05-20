@@ -1,8 +1,10 @@
 import tkinter as tk
 import ex1
 import ex2
+import ex2test
 import ex3
 import polyscope as ps
+import OBJ_File as obj
 
 def run_ex1():
     print("Exercice 1")
@@ -10,10 +12,7 @@ def run_ex1():
 
 def run_ex2():
     print("Exercice 2")
-    ps.init()
-    cube, vertices, edges = ex1.mesh_cube()
-    ex2.ExtraireBord((vertices, edges))
-    ps.show()
+    ex2test.main()
     
 
 def run_ex3():
