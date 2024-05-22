@@ -29,5 +29,31 @@ La subdivision de Loop est une méthode de subdivision de maillage qui consiste 
     a. *Que faut-il modifier pour appliquer le schéma de subdivision de Loop?*
     b. *Mettre  à  jour  la  fonction  Python  de  la  question  2.  pour  tenir  compte    des maillages avec bord.*
     c. *Afficher le résultat de subdivision sur un maillage avec bordpour différentes itérations*
+
+## Exercice 3  Subdivision Butterfly Modifiée
+
+Vous trouverez le code dans le fichier [Exercice3.py](.\Exercice3.py).
+
+* 1. *Rappeler le principe de la subdivision Butterfly modifiée*
+
+La subdivision Butterfly modifiée est une méthode de subdivision de maillage qui consiste à subdiviser chaque triangle en trois triangles plus petits. Pour chaque sommet, on calcule un nouveau sommet qui est la moyenne des sommets voisins. On ajoute ensuite un sommet au milieu de chaque arête.
+
+* 2. *On considère un maillage manifold fermé (sans bord).*
+
+    a. *Rappeler la notion de valence d’un sommet. Qu’est-cequ’un maillage régulier?*
+
+    La valence d'un sommet est le nombre de sommets voisins à un sommet donné. Un maillage régulier est un maillage dont tous les sommets ont la même valence.
+
+    b. *Écrire  une  fonction  Python  qui  implémente  le  schéma  de Butterfly modifiéepour ce type de maillage.* 
+
+    c.*Afficher le résultat de subdivision pour différentes itérations.*
+
+3. *On considère maintenant un maillage manifold avec bord.*
+
+    a. *Que faut-il modifier pour appliquer le schéma de Butterfly modifiée?*
+
+    b. *Mettre  à  jour  la  fonction  Python  de  la  question  2.  pour  tenir  compte  des maillages avec bord.*
+
+    c. *Afficher le résultat de subdivision sur un maillage avec bordpour différentes itérations.*
     
 
