@@ -44,7 +44,7 @@ La subdivision Butterfly modifiée est une méthode de subdivision de maillage q
 
     La valence d'un sommet est le nombre de sommets voisins à un sommet donné. Un maillage régulier est un maillage dont tous les sommets ont la même valence.
 
-    b. *Écrire  une  fonction  Python  qui  implémente  le  schéma  de Butterfly modifiéepour ce type de maillage.* 
+    b. *Écrire  une  fonction  Python  qui  implémente  le  schéma  de manifold  pour ce type de maillage.* 
 
     c.*Afficher le résultat de subdivision pour différentes itérations.*
 
@@ -52,8 +52,24 @@ La subdivision Butterfly modifiée est une méthode de subdivision de maillage q
 
     a. *Que faut-il modifier pour appliquer le schéma de Butterfly modifiée?*
 
+    Pour appliquer le schéma de Butterfly modifiée à un maillage avec bord, il faut traiter différemment les points sur le bord. Pour ces points, on utilise une formule différente pour calculer leur nouvelle position.
+
+```python
+for vertex in range(len(vertices)):
+    n = len(neighbors[vertex])
+    if n > 3: # Point intérieur
+        beta = 1/n * (5/8 - (3/8 + 1/4 * np.cos(2*np.pi/n))**2)
+        new_vertices[vertex] = (1 - n*beta)*vertices[vertex] + beta*sum(new_vertices[neighbor] for neighbor in neighbors[vertex])
+    else: # Point sur le bord
+        new_vertices[vertex] = 3/4 * vertices[vertex] + 1/8 * sum(new_vertices[neighbor] for neighbor in neighbors[vertex])
+```
+
     b. *Mettre  à  jour  la  fonction  Python  de  la  question  2.  pour  tenir  compte  des maillages avec bord.*
 
-    c. *Afficher le résultat de subdivision sur un maillage avec bordpour différentes itérations.*
+    Pour mettre à jour la fonction Python de la question 2 pour tenir compte des maillages avec bord, nous devons ajouter une condition pour vérifier si un sommet est sur le bord du maillage. Si c'est le cas, nous utilisons une formule différente pour calculer sa nouvelle position
+
+Vous retrouver la fonction dans le fichier [Exercice3.py](.\Exercice3.py).
+
+    c. *Afficher le résultat de subdivision sur un maillage avec bord pour différentes itérations.*
     
 
