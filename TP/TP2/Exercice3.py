@@ -53,6 +53,6 @@ if __name__ == '__main__':
     ex1.Visualize3DMesh(mesh[0], mesh[1])
     for i in range(5): # Changez ce nombre pour le nombre d'itérations que vous voulez
         print(f"Iteration {i+1}")
-        new_mesh = loop_subdivision(mesh, 1)
+        new_mesh = butterfly_subdivision(mesh, 1)
         ex1.Visualize3DMesh(new_mesh[0], new_mesh[1])
         mesh = new_mesh
